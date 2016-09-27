@@ -1,0 +1,38 @@
+<html ng-app="app">
+    <head>
+		<meta charset="UTF-8">
+        <title>03 - Formulario Simples Angular</title>
+
+		<!-- script angular -->
+        <script src="js/angular/angular.min.js"></script>
+        <script src="js/module.js"></script>
+        <script src="js/controller.js"></script>
+    </head>
+    <body>
+        <div ng-controller="controller02">
+            <h1>Formulário Simples</h1>
+            <form novalidate name="frm" ng-submit="adicionarObj(obj)">
+                <p>Nome: <input type="text" ng-model="obj.name" name="name" required /></p>
+                <p>Número: <input type="number" ng-model="obj.number" required /></p>
+                <p>
+                    Tipo: <select ng-model="obj.type_obj">
+                        <option ng-repeat="type in types_obj" value="{{ type }}" ng-selected="type==obj.type_obj">{{ type }}
+                    </select>
+                </p>
+                <p>
+                    Local: <input type="radio" value="Local 01" ng-model="obj.location" required />Local 01
+                    <input type="radio" value="Local 02" ng-model="obj.location" required />Local 02
+                </p>
+                <input type="submit" ng-disabled="frm.$invalid" name="number" value="Salvar">
+
+                <pre>
+                    {{ obj | json }}
+                </pre>
+                <pre>
+                    {{ objects | json }}
+                </pre>
+
+            </form>
+        </div>
+    </body>
+</html>

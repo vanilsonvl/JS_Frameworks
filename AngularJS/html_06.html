@@ -1,0 +1,62 @@
+<html ng-app="appDirective">
+    <head>
+		<meta charset="UTF-8">
+        <title>06 - Diretivas - Utilização e criação</title>
+
+		<!-- script angular -->
+        <script src="js/angular/angular.min.js"></script>
+        <script src="js/angular/angular-sanitize.min.js"></script>
+        <script src="js/module.js"></script>
+        <script src="js/controllerDirective.js"></script>
+
+        <!-- css -->
+        <link rel="stylesheet" href="css/cssDiretive.css">
+    </head>
+    <body ng-controller="controllerDiretive">
+        <h1>Diretivas - Utilização e criação</h1>
+        <div>
+            <h3>ng-show e ng-hide</h3>
+            <p ng-show="show">mostra se show = true</p>
+            <p ng-hide="show">mostra se show = false</p>
+            <p ng-show="!show">mostra se show = !true</p>
+            <input type="checkbox" ng-model="show" />Mostre-me!
+        </div>
+        <div>
+            <h3>ng-bind-html</h3>
+            <p>Sem ng-bind-html</p>
+            {{ htmlText }}
+
+            <p>Com ng-bind-html</p>
+            <p ng-bind-html="htmlText"></p>
+        </div>
+        <div>
+            <h3>ng-class</h3>
+            <div ng-class="myClass">Texto para ng-class</div>
+            <div>
+                <button ng-click="myClass='ngClass'">Adicionar CSS</button>
+                <button ng-click="myClass=''">Remover CSS</button>
+            </div>
+        </div>
+        <div>
+            <h3>ng-cloak</h3>
+            <p ng-cloak class="ng-cloak">{{ variableCloak }}</p>
+        </div>
+        <div>
+            <h3>ng-src</h3>
+            <img ng-src="img/{{myPicture}}"><br />
+            <button ng-click="myPicture='foto1.jpg'">Foto1</button>
+            <button ng-click="myPicture='foto2.jpg'">Foto2</button>
+        </div>
+        <div>
+            <h2>Novas Diretivas</h2>
+
+            <p>Diretiva Ola</p>
+            <p>Utilizando {{ ngOlaA }}</p>
+            <div ng-ola ng-name="Vanilson"></div>
+            <p>Utilizando {{ ngOlaE }}</p>
+            <ng-ola ng-name="Leite"></ng-ola>
+            <p>Utilizando {{ ngOlaC }}</p>
+            <div class="ng-ola" ng-name="AngularJS"></div>
+        </div>
+    </body>
+</html>
