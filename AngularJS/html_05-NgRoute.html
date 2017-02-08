@@ -1,0 +1,28 @@
+<html ng-app='appRoute'>
+    <head>
+		<meta charset="UTF-8">
+        <title>05 - NgRoute</title>
+
+		<!-- script angular -->
+        <script src="js/angular/angular.min.js"></script>
+        <script src="js/modules.js"></script>
+        <script src="js/routeController.js"></script>
+        <script src="js/angular/angular-route.min.js"></script>
+
+        <base href="/AngularJS/" />
+    </head>
+    <body>
+        <div ng-controller="controllerRoute">
+
+            <ul>
+                <li>
+                    <a href="html_route_inicial.html">Inicial</a>
+                    <a href="html_route_pagina1.html">Página 1</a>
+                    <a href="html_route_pagina2.html/3">Página 2</a>
+                </li>
+            </ul>
+            <div ng-view>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<html  ng-app="app">
+    <head>
+		<meta charset="UTF-8">
+        <title>02 - Modulos, Filtros, Controllers</title>
+
+		<!-- script angular -->
+        <script src="js/angular/angular.min.js"></script>
+        <script src="js/modules.js"></script>
+        <script src="js/filters.js"></script>
+        <script src="js/controllers.js"></script>
+    </head>
+    <body>
+        <div>
+            <h3>Filtro Simples</h3>
+            <p><input type="text" ng-model="name" /></p>
+            {{ name | ola }}
+        </div>
+        <div ng-controller="controller01">
+            <h3>{{ controllerName }}, ng-click</h3>
+            <button ng-click="click()">Clique aqui</button> {{ welcome }}
+            <p><h3>Ng-Repeat</h3></p>
+            <label>Adicione um valor: </label>
+            <input type="text" ng-model="new_value" />
+            <button ng-click="adicionarValue(new_value)">Adicionar</button>
+            <ul>
+                <li ng-repeat="value in values">{{ value }}</li>
+            </ul>
+         </div>
+    </body>
+</html>
