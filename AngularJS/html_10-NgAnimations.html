@@ -1,0 +1,33 @@
+<html ng-app="appAnimate">
+    <head>
+		<meta charset="UTF-8">
+        <title>Ng Animations</title>
+
+        <!-- css -->
+        <link href="css/cssAnimation.css" rel="stylesheet">
+
+		<!-- script angular -->
+        <script src="js/angular/angular.min.js"></script>
+        <script src="js/modules.js"></script>
+        <script src="js/angular/angular-animate.min.js"></script>
+
+        <script src="js/animateController.js"></script>
+    </head>
+    <body>
+        <div ng-controller="AnimateController" ng-init="show=true;itemadd=0">
+            <input type="checkbox" ng-model="show" />
+            <div class="hide" ng-show="show">Testes Animations</div>
+
+            <hr />
+
+            <input type="text" ng-model="itemadd" />
+            <button type="button" ng-click="addItem()">Adicionar</button>
+
+            <hr />
+
+            <div class="repeat-list" ng-repeat="item in items">
+                {{ item }}
+            </div>    
+        </div>
+    </body>
+</html>

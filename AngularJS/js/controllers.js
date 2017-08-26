@@ -1,4 +1,4 @@
-    app.controller('controller01', function($scope){
+app.controller('controller01', function($scope){
     $scope.controllerName = "Controller 01";
     $scope.click = function(){
         $scope.welcome = "Bem Vindo.";
